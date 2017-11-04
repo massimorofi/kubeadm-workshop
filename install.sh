@@ -1,6 +1,7 @@
 #!/bin/sh
 #Fix Doker
 apt-get remove --purge docker.io kubeadm 
+sudo apt autoremove
 wget -qO- https://get.docker.com/ | sh
 
 read -p "Press enter to continue"
