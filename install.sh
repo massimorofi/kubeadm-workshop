@@ -21,7 +21,7 @@ EOF
 apt-get update && apt-get install -y docker.io kubeadm ceph-common
 
 # Set current arch
-ARCH=${ARCH:-"amd64"}
+ARCH=${ARCH:-"arm64"}
 
 # Enable hostPort support using CNI & Weave
 mkdir -p /etc/cni/net.d/
