@@ -6,6 +6,8 @@ apt autoremove
 
 wget -qO- https://get.docker.com/ | sh
 
+apt-get update
+
 read -p "Press enter to continue"
 
 # Add the kubernetes apt repo
@@ -49,11 +51,11 @@ curl -sSL https://github.com/containernetworking/plugins/releases/download/v0.6.
 curl -sSL https://storage.googleapis.com/kubernetes-helm/helm-v2.6.2-linux-${ARCH}.tar.gz | tar -xz -C /usr/local/bin linux-${ARCH}/helm --strip-components=1
 
 # Use overlay as the docker storage driver
-cat /proc/mounts | awk '{print $2}' | grep '/var/lib/docker' | xargs -r umount
-rm -rf /var/lib/docker
-sed -e "s|/usr/bin/dockerd|/usr/bin/dockerd -s overlay2|g" -i /lib/systemd/system/docker.service
-systemctl daemon-reload
-systemctl restart docker
+#cat /proc/mounts | awk '{print $2}' | grep '/var/lib/docker' | xargs -r umount
+#rm -rf /var/lib/docker
+#sed -e "s|/usr/bin/dockerd|/usr/bin/dockerd -s overlay2|g" -i /lib/systemd/system/docker.service
+#systemctl daemon-reload
+#systemctl restart docker
 
 #git clone https://github.com/luxas/kubeadm-workshop
 #cd kubeadm-workshop
