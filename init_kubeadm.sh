@@ -4,6 +4,7 @@
 swapoff -a
 free -m
 kubeadm reset
+rm -Rf ./kube
 
 # runi kubeadm init
 kubeadm init --config kubeadm.yaml > kinit.log
