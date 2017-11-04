@@ -1,4 +1,6 @@
-### Workshop:
+###########################
+## Modified scripts to experiment on pine64 with ubuntu xenial on top
+## try to fix pine64 kubernets/docker issues
 
 ## Building a multi-platform Kubernetes cluster on bare metal with `kubeadm`
 

@@ -1,3 +1,9 @@
+#!/bin/sh
+#Fix Doker
+apt-get remove --purge docker-engine kubeadm 
+wget -qO- https://get.docker.com/ | sh
+
+read -p "Press enter to continue"
 
 # Add the kubernetes apt repo
 apt-get update && apt-get install -y apt-transport-https
@@ -10,7 +16,7 @@ EOF
 apt-get update && apt-get install -y docker.io kubeadm ceph-common
 
 # Set current arch
-ARCH=${ARCH:-"amd64"}
+ARCH=${ARCH:-"arm64"}
 
 # Enable hostPort support using CNI & Weave
 mkdir -p /etc/cni/net.d/
@@ -46,5 +52,5 @@ sed -e "s|/usr/bin/dockerd|/usr/bin/dockerd -s overlay2|g" -i /lib/systemd/syste
 systemctl daemon-reload
 systemctl restart docker
 
-git clone https://github.com/luxas/kubeadm-workshop
-cd kubeadm-workshop
+#git clone https://github.com/luxas/kubeadm-workshop
+#cd kubeadm-workshop
