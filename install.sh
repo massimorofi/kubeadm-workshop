@@ -1,4 +1,5 @@
 #!/bin/sh
+
 #Fix Doker
 rm -fR /etc/docker
 apt-get remove --purge docker.io kubeadm 
